@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="@drawable/lister"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="8dp"
+        android:layout_margin="1dp"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageIcon"
+            android:src="@drawable/ic_icon_off"
+            android:contentDescription="@string/todo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="40dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/songName"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp"
+                android:lines="1"
+                android:ellipsize="end" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/artists"
+                android:textColor="@color/asher"
+                android:textSize="14sp"
+                android:lines="1"
+                android:ellipsize="end" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imageButton"
+            android:backgroundTint="@color/transparent"
+            android:src="@drawable/ic_arrow_circle_down"
+            android:layout_marginStart="-35dp"
+            android:contentDescription="@string/todo" />
+
+    </LinearLayout>
+
+</LinearLayout>

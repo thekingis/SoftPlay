@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomAttribute">
+        <attr name="borderRadius" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="MaxHeight">
+        <attr name="mxHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="MaxHeightScrollView">
+        <attr name="maxHeight" format="dimension" />
+    </declare-styleable>
+
+</resources>

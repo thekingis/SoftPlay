@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DialogBoxActivity">
+
+    <com.kanasoft.softplay.Views.CornerLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mainColor"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        android:orientation="vertical"
+        app:borderRadius="7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.kanasoft.softplay.Views.CornerImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/imageDisc"
+                android:layout_weight="0"
+                android:scaleType="centerCrop"
+                app:borderRadius="10"
+                android:background="@drawable/retro" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/songName"
+                    android:text="@string/unknown"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="2dp"
+                    android:lines="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/artists"
+                    android:text="@string/unknown"
+                    android:textColor="@color/asher"
+                    android:textSize="14sp"
+                    android:lines="1"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/durationTextView"
+                    android:text="@string/_00_00_00"
+                    android:textColor="@color/asher"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <com.kanasoft.softplay.Views.RoundLinearLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="0"
+                android:id="@+id/playPause"
+                android:gravity="center"
+                android:background="@drawable/button_background">
+
+                <com.kanasoft.softplay.Views.RoundImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/playPauseBtn"
+                    android:src="@drawable/ic_play_circle"/>
+
+            </com.kanasoft.softplay.Views.RoundLinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/icon"
+                android:contentDescription="@string/todo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/skyBlueDark"
+                android:textSize="16sp"/>
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekBar"
+                android:layout_marginStart="10dp"
+                android:thumb="@drawable/seeker"
+                android:progressDrawable="@drawable/seek_bar_style" />
+
+        </LinearLayout>
+
+    </com.kanasoft.softplay.Views.CornerLayout>
+
+</RelativeLayout>

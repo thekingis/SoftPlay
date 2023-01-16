@@ -1,0 +1,2 @@
+rootProject.name = "SoftPlay"
+include ':app'

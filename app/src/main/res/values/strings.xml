@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">SoftPlay</string>
+    <string name="todo">TODO</string>
+    <string name="permReq">You need to grant all required permissions to use SoftPlay\n\n Do you want to grant permission?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="unknown">Unknown</string>
+    <string name="search">Search…</string>
+    <string name="_00_00_00">00:00:00</string>
+    <string name="playlist">Playlist</string>
+    <string name="favourite">Favourite</string>
+    <string name="more">More</string>
+    <string name="close">Close</string>
+    <string name="queuedSongs">Queued Songs</string>
+    <string name="_0">(0)</string>
+    <string name="scanning_music">Scanning Music…</string>
+    <string name="cancel_scan">Cancel Scan</string>
+    <string name="zero">0</string>
+    <string name="undo">UNDO</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="create_new_playlist">Create New Playlist</string>
+    <string name="create">Create</string>
+    <string name="enter_playlist_name">Enter Playlist Name…</string>
+    <string name="all_songs">All Songs</string>
+    <string name="rename">Rename</string>
+</resources>

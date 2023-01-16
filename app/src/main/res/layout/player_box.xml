@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/mainColor">
+
+    <com.kanasoft.softplay.Views.RoundLinearLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/minimizeBtn"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/default_button"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_arrow_downward"
+            android:contentDescription="@string/todo" />
+
+    </com.kanasoft.softplay.Views.RoundLinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/minimizeBtn">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints"
+            android:padding="20dp"
+            android:weightSum="1"
+            android:baselineAligned="false">
+
+            <com.kanasoft.softplay.Views.CornerImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/playerImage"
+                android:scaleType="centerCrop"
+                android:background="@drawable/retro"
+                app:borderRadius="10"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/optionsLayer"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="@dimen/dp10"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerBoxTitle"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@string/unknown"
+            android:gravity="center"
+            android:lines="1"
+            android:ellipsize="marquee"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerBoxArtist"
+            android:textColor="@color/ash"
+            android:textSize="15sp"
+            android:text="@string/unknown"
+            android:gravity="center"
+            android:lines="1"
+            android:ellipsize="marquee"/>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/optionsLayer"
+        android:paddingHorizontal="50dp"
+        android:paddingVertical="@dimen/dp20"
+        android:layout_above="@+id/progressLayer">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints"
+            android:weightSum="3"
+            android:gravity="center_vertical"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/plyBtn"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_add_playlist"
+                        android:contentDescription="@string/todo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/asher"
+                        android:textSize="14sp"
+                        android:text="@string/playlist"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/favBtn"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/faviconView"
+                        android:src="@drawable/ic_favorite_red"
+                        android:contentDescription="@string/todo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/asher"
+                        android:textSize="14sp"
+                        android:text="@string/favourite"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/morBtn"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_more"
+                        android:contentDescription="@string/todo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/asher"
+                        android:textSize="14sp"
+                        android:text="@string/more"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressLayer"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="@dimen/dp20"
+        android:layout_above="@+id/bottomLayer">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressTextView"
+            android:layout_weight="0"
+            android:textColor="@color/ash"
+            android:textSize="13sp"
+            android:text="@string/_00_00_00" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBar"
+            android:layout_weight="1"
+            android:paddingVertical="5dp"
+            android:thumb="@drawable/seeker"
+            android:progressDrawable="@drawable/seek_bar_style" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/durationTextView"
+            android:layout_weight="0"
+            android:textColor="@color/ash"
+            android:textSize="13sp"
+            android:text="@string/_00_00_00" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomLayer"
+        android:paddingHorizontal="5dp"
+        android:paddingBottom="@dimen/dp40"
+        android:layout_alignParentBottom="true"
+        android:weightSum="5"
+        android:gravity="center_vertical"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            tools:ignore="UselessParent">
+
+            <com.kanasoft.softplay.Views.RoundLinearLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/btnLooper"
+                android:background="@drawable/default_button"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/looperBtn"
+                    android:background="@drawable/ic_shuffle"
+                    android:contentDescription="@string/todo" />
+
+            </com.kanasoft.softplay.Views.RoundLinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            tools:ignore="UselessParent">
+
+            <com.kanasoft.softplay.Views.RoundLinearLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/prevBtn"
+                android:background="@drawable/default_button"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_previous_ash"
+                    android:contentDescription="@string/todo" />
+
+            </com.kanasoft.softplay.Views.RoundLinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            tools:ignore="UselessParent">
+
+            <com.kanasoft.softplay.Views.RoundLinearLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/playPause2"
+                android:gravity="center"
+                android:background="@drawable/button_background">
+
+                <com.kanasoft.softplay.Views.RoundImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/playPauseBtn2"
+                    android:src="@drawable/ic_play_circle"
+                    android:background="@color/transparent"
+                    android:contentDescription="@string/todo" />
+
+            </com.kanasoft.softplay.Views.RoundLinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            tools:ignore="UselessParent">
+
+            <com.kanasoft.softplay.Views.RoundLinearLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/nextBtn"
+                android:background="@drawable/default_button"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_next_ash"
+                    android:contentDescription="@string/todo" />
+
+            </com.kanasoft.softplay.Views.RoundLinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            tools:ignore="UselessParent">
+
+            <com.kanasoft.softplay.Views.RoundLinearLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/cuedBtn"
+                android:background="@drawable/default_button"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_queue"
+                    android:contentDescription="@string/todo" />
+
+            </com.kanasoft.softplay.Views.RoundLinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SongsFragment">
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gridView"
+        android:paddingTop="3dp"
+        android:verticalSpacing="3dp"
+        android:gravity="center"
+        android:paddingBottom="60dp"
+        android:clipToPadding="false"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/emptyResult"
+        android:visibility="gone"
+        android:background="@color/mainColor"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/emptyTextView"
+            android:paddingHorizontal="20dp"
+            android:textColor="@color/ash"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <com.kanasoft.softplay.Views.RoundLinearLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/addPlaylistButton"
+        android:background="@color/skyBlueDark"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_add_playlist_blue"
+            android:contentDescription="@string/todo" />
+
+    </com.kanasoft.softplay.Views.RoundLinearLayout>
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/subGridView"
+        android:visibility="gone"
+        android:paddingTop="3dp"
+        android:verticalSpacing="3dp"
+        android:gravity="center"
+        android:paddingBottom="60dp"
+        android:clipToPadding="false" />
+
+    <com.kanasoft.softplay.Views.RoundLinearLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/addSongButton"
+        android:background="@color/skyBlueDark"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        android:layout_margin="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_add"
+            android:contentDescription="@string/todo" />
+
+    </com.kanasoft.softplay.Views.RoundLinearLayout>
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/markGridView"
+        android:visibility="gone"
+        android:paddingTop="3dp"
+        android:verticalSpacing="3dp"
+        android:gravity="center" />
+
+</RelativeLayout>

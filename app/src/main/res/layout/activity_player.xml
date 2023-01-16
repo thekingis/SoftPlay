@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainView"
+    android:background="@color/mainColor"
+    tools:context=".PlayerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/header"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/border_box"
+            android:id="@+id/searchBox"
+            android:hint="@string/search"
+            android:drawablePadding="10dp"
+            android:drawableEnd="@drawable/ic_search"
+            android:textColor="@color/white"
+            android:inputType="text"
+            android:layout_marginEnd="50dp"
+            android:imeOptions="actionDone"
+            android:textSize="17sp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="10dp"/>
+
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/scannerBtn"
+            android:background="@drawable/listor"
+            android:layout_marginStart="-40dp"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_scan"
+                android:background="@null"
+                android:contentDescription="@string/todo" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/_2xf4"
+        android:layout_below="@+id/header"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/headerTextView"
+            android:layout_centerVertical="true"
+            android:textColor="@color/ash"
+            android:textSize="17sp"
+            android:text="@string/all_songs"
+            tools:ignore="RelativeOverlap" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/headerBtn"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:backgroundTint="@color/skyBlueDark"
+            android:padding="10dp"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:visibility="invisible"
+            tools:ignore="RelativeOverlap" />
+
+    </RelativeLayout>
+
+    <com.kanasoft.softplay.Views.NoneSwipeableViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewPager"
+        android:layout_below="@+id/_2xf4"
+        android:layout_above="@+id/player" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/player"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp"
+        android:layout_above="@+id/tabLayout"
+        android:background="@drawable/border_top"
+        android:orientation="horizontal">
+
+        <com.kanasoft.softplay.Views.CornerImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/imageDisc"
+            android:scaleType="centerCrop"
+            app:borderRadius="10"
+            android:background="@drawable/retro" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="45dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/songName"
+                android:text="@string/unknown"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_marginBottom="2dp"
+                android:lines="1"
+                android:ellipsize="end" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/artists"
+                android:text="@string/unknown"
+                android:textColor="@color/asher"
+                android:textSize="14sp"
+                android:lines="1"
+                android:ellipsize="end" />
+
+        </LinearLayout>
+
+        <com.kanasoft.softplay.Views.RoundLinearLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/playPause"
+            android:gravity="center"
+            android:layout_marginStart="-40dp"
+            android:background="@drawable/button_background">
+
+            <com.kanasoft.softplay.Views.RoundImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/playPauseBtn"
+                android:src="@drawable/ic_play_circle"/>
+
+        </com.kanasoft.softplay.Views.RoundLinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tabLayout"
+        android:layout_alignParentBottom="true"
+        app:tabGravity="fill"
+        app:tabInlineLabel="true"
+        android:background="@drawable/border_top"
+        app:tabIndicatorHeight="0dp"
+        app:tabIconTint="@color/blash"
+        app:tabPaddingStart="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/playerBox"
+        android:background="@color/mainColor"
+        android:orientation="vertical">
+
+        <include layout="@layout/player_box" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:id="@+id/queueLayout"
+        android:background="@drawable/list_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/queuedSongs"
+                android:gravity="center"
+                android:textColor="@color/ash"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/queueNumberTV"
+                android:text="@string/_0"
+                android:gravity="end"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/ash"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/undoBtn"
+                    android:text="@string/undo"
+                    android:visibility="invisible"
+                    android:textColor="@color/whiteAsh"
+                    android:background="@drawable/blox"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="8dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.kanasoft.softplay.Views.MaxHeightGridView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gridView"
+            app:mxHeight="300dp"
+            android:background="@drawable/vertical_border"
+            android:paddingVertical="1dp"
+            android:paddingHorizontal="10dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/closeQueue"
+            android:text="@string/close"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textColor="@color/ash"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/menuBox"
+        android:background="@color/blackFade"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout"
+            android:background="@drawable/list_background"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_bottom_top_corner"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <com.kanasoft.softplay.Views.CornerImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    app:borderRadius="10"
+                    android:background="@drawable/retro" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/songNameSel"
+                        android:text="@string/unknown"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="2dp"
+                        android:lines="1"
+                        android:ellipsize="end" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/artistsSel"
+                        android:text="@string/unknown"
+                        android:textColor="@color/asher"
+                        android:textSize="14sp"
+                        android:lines="1"
+                        android:ellipsize="end" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/menuLayer"
+                android:orientation="vertical"
+                android:background="@color/black"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/playListMenuBox"
+        android:background="@color/blackFade"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/playout"
+            android:background="@drawable/list_background"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/playlistNameView"
+                android:drawableStart="@drawable/ic_playlist"
+                android:drawablePadding="20dp"
+                android:textColor="@color/white"
+                android:background="@drawable/border_bottom_top_corner"
+                android:textSize="18sp"
+                android:padding="20dp"
+                android:lines="1"
+                android:ellipsize="end" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/playlistMenuLayer"
+                android:orientation="vertical"
+                android:background="@color/black"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/playlistsLayer"
+        android:visibility="gone"
+        android:background="@color/blackFade">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_background"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <com.kanasoft.softplay.Views.MaxHeightScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:maxHeight="200dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/playlistLayer"
+                    android:orientation="vertical"/>
+
+            </com.kanasoft.softplay.Views.MaxHeightScrollView>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/createPlaylistBtn"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:layout_marginTop="20dp"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp"
+                android:gravity="start|center_vertical"
+                android:background="@drawable/button_style_ash"
+                android:text="@string/create_new_playlist"
+                android:textColor="@color/niner"
+                android:textSize="15sp"
+                android:textAllCaps="false"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_plus"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/createPlaylistsLayer"
+        android:visibility="gone"
+        android:background="@color/blackFade">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_background"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_add_playlist"
+                android:text="@string/create_new_playlist"
+                android:textColor="@color/niner"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/playlistNameBox"
+                    android:layout_marginEnd="120dp"
+                    android:background="@drawable/button_style_ash"
+                    android:padding="8dp"
+                    android:textSize="16sp"
+                    android:hint="@string/enter_playlist_name"
+                    android:textColorHint="@color/niner"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/createNewPlaylistBtn"
+                    android:layout_marginStart="-120dp"
+                    android:backgroundTint="@color/skyBlueDark"
+                    android:text="@string/create"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
